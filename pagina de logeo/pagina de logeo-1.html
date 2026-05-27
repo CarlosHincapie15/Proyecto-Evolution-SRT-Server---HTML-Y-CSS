@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evolution SRT - Acceso</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+  <div class="auth-container" id="login-section">
+    <div class="auth-card">
+      <h2 class="auth-title">Evolution SRT - Server</h2>
+      <p class="auth-subtitle">Ingresa tus credenciales para administrar los flujos</p>
+      
+      <form class="auth-form">
+        <div class="form-group">
+          <label for="login-user">Nombre de usuario</label>
+          <input type="text" id="login-user" placeholder="Ej. administrador" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="login-pass">Contraseña</label>
+          <div class="password-wrapper">
+            <input type="password" id="login-pass" placeholder="••••••••" required>
+            <span class="password-toggle">👁️</span>
+          </div>
+        </div>
+        
+        <div class="form-actions">
+          <a href="#" class="forgot-link">He olvidado mi información de inicio de sesión</a>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+      </form>
+      
+      <div class="auth-footer">
+        <p>¿No tienes una cuenta? <a href="#" class="switch-link">Regístrate aquí</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="auth-container d-none" id="register-section">
+    <div class="auth-card">
+      <h2 class="auth-title">Crear Cuenta SRT</h2>
+      <p class="auth-subtitle">Regístrate para gestionar tus canales y protocolos</p>
+      
+      <form class="auth-form">
+        <div class="form-group">
+          <label for="reg-name">Nombre Completo</label>
+          <input type="text" id="reg-name" placeholder="Ej. Carlos Pérez" required>
+        </div>
+
+        <div class="form-group">
+          <label for="reg-user">Nombre de Usuario</label>
+          <input type="text" id="reg-user" placeholder="Ej. carlosp_dev" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="reg-email">Correo Electrónico</label>
+          <input type="email" id="reg-email" placeholder="correo@ejemplo.com" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="reg-pass">Contraseña</label>
+          <input type="password" id="reg-pass" placeholder="Crea una contraseña segura" required>
+        </div>
+        
+        <button type="submit" class="btn btn-success">Registrar Servidor</button>
+      </form>
+      
+      <div class="auth-footer">
+        <p>¿Ya tienes cuenta? <a href="#" class="switch-link">Inicia sesión</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-container d-none" id="home-section">
+    <aside class="sidebar">
+      <div class="sidebar-brand">Evolution SRT</div>
+      nav class="sidebar-menu">
+        <a href="#" class="active">📊 Dashboard</a>
+        <a href="#">🔌 Canales / Flujos</a>
+        <a href="#">⚙️ Configuración</a>
+      </nav>
+    </aside>
+    
+    <main class="main-content">
+      <header class="main-header">
+        <h1>Panel de Control Principal</h1>
+        <div class="user-profile">Carlos 🟢</div>
+      </header>
+      
+      <section class="dashboard-grid">
+        <div class="card card-stat">
+          <h3>Canales Activos</h3>
+          <p class="stat-value">2 / 4</p>
+        </div>
+        <div class="card card-stat">
+          <h3>Bitrate Total</h3>
+          <p class="stat-value">25.2 Mbps</p>
+        </div>
+        <div class="card card-stat">
+          <h3>Estado Servidor</h3>
+          <p class="stat-value text-success">Online</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+</body>
+</html>
