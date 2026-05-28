@@ -1,0 +1,325 @@
+/* ==========================================
+   VARIABLES Y CONFIGURACIÓN BASE
+   ========================================== */
+:root {
+  --bg-dark: #0f172a;
+  --bg-card: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --success: #22c55e;
+  --success-hover: #16a34a;
+  --border-color: #334155;
+  --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-stack);
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Utilidad para ocultar secciones temporalmente */
+.d-none {
+  display: none !important;
+}
+
+/* ==========================================
+   ESTILOS DE FORMULARIOS (LOGIN Y REGISTRO)
+   ========================================== */
+.auth-container {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.auth-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.auth-subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.form-group input {
+  background-color: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* Input con icono de ojo para contraseña */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 45px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+  user-select: none;
+  opacity: 0.6;
+}
+
+.password-toggle:hover {
+  opacity: 1;
+}
+
+.form-actions {
+  margin-bottom: 25px;
+  text-align: right;
+}
+
+.forgot-link, .switch-link {
+  color: var(--primary);
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.forgot-link:hover, .switch-link:hover {
+  text-decoration: underline;
+}
+
+/* Botones */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  transition: background-color 0.2s;
+}
+
+.btn-primary { background-color: var(--primary); }
+.btn-primary:hover { background-color: var(--primary-hover); }
+
+.btn-success { background-color: var(--success); }
+.btn-success:hover { background-color: var(--success-hover); }
+
+/* Botón de inicio personalizado */
+.tu-clase-de-boton {
+  display: block;
+  margin: 25px auto 0;
+  max-width: 300px;
+  padding: 12px 24px;
+  background-color: #0d1b2a;
+  color: #ffffff;
+  border: 1px solid #00b4d8;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tu-clase-de-boton:hover {
+  background-color: #00b4d8;
+  color: #000;
+  box-shadow: 0 0 10px rgba(0, 180, 216, 0.5);
+  transform: scale(1.02);
+}
+
+.tu-clase-de-boton:active {
+  transform: scale(0.98);
+}
+
+.auth-footer {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================
+   ESTILOS ESTRUCTURA DEL HOME (DASHBOARD)
+   ========================================== */
+.home-container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  align-self: flex-start;
+}
+
+.sidebar {
+  width: 260px;
+  background-color: var(--bg-card);
+  border-right: 1px solid var(--border-color);
+  padding: 24px;
+}
+
+.sidebar-brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: var(--primary);
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-menu a {
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.sidebar-menu a:hover, .sidebar-menu a.active {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 40px;
+  background-color: var(--bg-dark);
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* Rejilla de tarjetas (El corazón de la adaptabilidad) */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.text-success { color: var(--success); }
+
+/* ==========================================
+   MEDIA QUERIES (RESPONSIVIDAD TOTAL)
+   ========================================== */
+
+/* Reglas para Tablets (Pantallas menores a 768px) */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column; /* Pone el menú arriba y el contenido abajo */
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px;
+  }
+
+  .sidebar-brand {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .sidebar-menu {
+    flex-direction: row; /* Menú horizontal en tablets/móviles */
+    justify-content: space-around;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+}
+
+/* Reglas para Celulares (Pantallas menores a 480px) */
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 25px 20px; /* Menos espacio interno en pantallas chicas */
+  }
+
+  .auth-title {
+    font-size: 1.5rem;
+  }
+
+  .sidebar-menu {
+    font-size: 0.85rem;
+    padding: 5px 0;
+  }
+
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,337 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #071426, #020611);
+    color: #e7e9ee;
+    /* <u>CAMBIO: Asegura altura mínima para evitar cortes en el fondo gradiente</u> */
+    min-height: 100vh;
+}
+
+/* HEADER */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 1px solid #1f2937;
+    /* <u>CAMBIO RESPONSIVO: Permite envolver elementos si el espacio horizontal se reduce</u> */
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* <u>CAMBIO: Estilos para la barra de botones de navegación interna</u> */
+.navigation-menu {
+    display: flex;
+    gap: 10px;
+}
+.btn-nav {
+    background: #0f172a;
+    color: #9ca3af;
+    border: 1px solid #334155;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    /* <u>CAMBIO: Transición de animación básica requerida</u> */
+    transition: all 0.2s ease;
+}
+.btn-nav:hover, .btn-nav.active {
+    color: #ffffff;
+    border-color: #22c1ff;
+    background: #1e293b;
+}
+
+.logo h1 {
+    font-size: 28px;
+}
+
+.logo span {
+    color: #22c1ff;
+}
+
+.logo p {
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+.btn-login {
+    background-color: #0d1b2a; 
+    color: #ffffff;
+    border: 1px solid #00b4d8; 
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    /* Transición para el efecto hover */
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #00b4d8; 
+    color: #000;
+    box-shadow: 0 0 10px rgba(0, 180, 216, 0.5);
+    /* <u>CAMBIO: Animación de microinteracción al pasar el mouse</u> */
+    transform: scale(1.02);
+}
+
+/* BUTTONS */
+.actions {
+    padding: 20px 40px;
+    /* <u>CAMBIO: Flexbox aplicado para evitar desbordes de botones en tablets</u> */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    /* <u>CAMBIO: Transición suave agregada para feedback del usuario</u> */
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+/* <u>CAMBIO: Animación básica hover en botones</u> */
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.blue { background: #2563eb; }
+.green-bg { background: #16a34a; }
+.dark { background: #1f2937; }
+
+/* BOTÓN AÑADIR CON ESTILO CYAN */
+.btn-add-primary {
+    background-color: #0d1b2a;
+    color: #ffffff;
+    border: 1px solid #00b4d8;
+    transition: all 0.3s ease;
+}
+
+.btn-add-primary:hover {
+    background-color: #00b4d8;
+    color: #000;
+    box-shadow: 0 0 10px rgba(0, 180, 216, 0.5);
+    transform: scale(1.02);
+}
+
+.btn-add-primary:active {
+    transform: scale(0.98);
+}
+
+/* MENÚS DESPLEGABLES */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #0f172a;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    border: 1px solid #1f2937;
+    border-radius: 6px;
+    z-index: 1000;
+    top: 100%;
+    left: 0;
+    margin-top: 5px;
+}
+
+.dropdown-content a {
+    color: #e7e9ee;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #1f2937;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #1e293b;
+    color: #00b4d8;
+    padding-left: 20px;
+}
+
+.dropdown.active .dropdown-content {
+    display: block;
+}
+
+/* SEARCH */
+.search-bar {
+    display: flex;
+    gap: 10px;
+    padding: 0 40px 20px;
+}
+/* <u>CAMBIO: Permite al buscador ocupar solo el espacio que necesita</u> */
+.search-bar input {
+    flex: 0 1 auto;
+    width: fit-content;
+    min-width: 350px;
+}
+
+.search-bar input, .search-bar select {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #0f172a;
+    color: white;
+}
+
+/* TABLE */
+.table-container {
+    padding: 0 40px;
+}
+
+/* <u>CAMBIO CRÍTICO RESPONSIVO: Previene que la tabla ensanche el cuerpo de la web en móviles</u> */
+.table-responsive-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #020617;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+thead {
+    background: #020617;
+    color: #60a5fa;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+tbody tr {
+    border-top: 1px solid #1f2937;
+    /* <u>CAMBIO: Transición de color suave en las filas</u> */
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background: #0f172a;
+}
+
+/* STATUS COLORS */
+.green { color: #22c55e; }
+.yellow { color: #facc15; }
+.red { color: #ef4444; }
+
+/* ACTION BUTTONS */
+.actions-cell {
+    /* <u>CAMBIO: Mantiene el bloque de botones alineados juntos sin dividirse en dos líneas</u> */
+    white-space: nowrap;
+}
+
+.actions-cell .icon {
+    background: #1f2937;
+    border: none;
+    padding: 6px 10px;
+    margin-right: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    /* <u>CAMBIO: Transición para las acciones</u> */
+    transition: background-color 0.15s ease;
+}
+.actions-cell .icon:hover:not(.disabled) {
+    background: #374151;
+}
+
+.play { background: #16a34a; }
+.stop { background: #dc2626; }
+.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* LEGEND */
+.legend {
+    margin: 30px 40px;
+    padding: 20px;
+    border: 1px solid #1f2937;
+    border-radius: 10px;
+    background: #020617;
+}
+
+.legend p {
+    margin-bottom: 10px;
+}
+
+
+/* ========================================================== */
+/* <u>CAMBIO ADICIONAL EXCLUSIVO: BLOQUE DE MEDIA QUERIES (@media)</u> */
+/* ========================================================== */
+
+/* 1. MÓVIL (Pantallas de smartphones hasta 640px) */
+@media (max-width: 640px) {
+    .topbar {
+        /* Pasa el header de horizontal a vertical alineado */
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+    
+    .navigation-menu, .btn-login {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .actions {
+        padding: 15px 20px;
+    }
+    
+    .btn {
+        flex: 1 1 calc(50% - 10px); /* Los botones se adaptan en cuadrículas de dos */
+        text-align: center;
+        font-size: 13px;
+    }
+
+    .search-bar {
+        padding: 0 20px 15px;
+        flex-direction: column; /* Apila el buscador sobre el filtro */
+    }
+    
+    .table-container {
+        padding: 0 20px;
+    }
+
+    .legend {
+        margin: 20px;
+        padding: 15px;
+    }
+}
+
+/* 2. TABLET (Pantallas intermedias entre 641px y 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .topbar {
+        padding: 20px;
+    }
+    .actions, .search-bar, .table-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .logo h1 {
+        font-size: 24px;
+    }
+}
