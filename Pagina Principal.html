@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolution SRT Server</title>
+    
+   
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="bg-slate-900 border-b border-slate-800 p-4 text-xs md:text-sm text-slate-300">
+    
+    </div>
+</div>
+
+<header class="topbar">
+    <div class="logo">
+        <h1>Evolution <span>SRT</span> - Server</h1>
+        <p>Secure • Reliable • Low Latency Streaming over IP</p>
+    </div>
+    
+    <div class="navigation-menu">
+        <button class="btn-nav active" onclick="alert('Ya estás en el Panel Principal')">Panel Principal</button>
+        <button class="btn-nav" onclick="alert('Navegando a Métricas Globales...')">Métricas Globales</button>
+    </div>
+</header>
+
+<section class="actions">
+    <div class="dropdown" onclick="toggleDropdown(event)">
+        <button class="btn btn-add-primary">+ Añadir</button>
+        <div class="dropdown-content">
+            <a href="#" onclick="alert('Nuevo Canal'); return false;">Nuevo Canal</a>
+            <a href="#" onclick="alert('Nuevo Stream'); return false;">Nuevo Stream</a>
+            <a href="#" onclick="alert('Nuevo Receptor'); return false;">Nuevo Receptor</a>
+        </div>
+    </div>
+
+    <div class="dropdown" onclick="toggleDropdown(event)">
+        <button class="btn green-bg">⟳ Arranque Limpio</button>
+        <div class="dropdown-content">
+            <a href="#" onclick="alert('Reiniciar Servicios'); return false;">Reiniciar Servicios</a>
+            <a href="#" onclick="alert('Limpiar Caché'); return false;">Limpiar Caché</a>
+            <a href="#" onclick="alert('Reset de Puertos'); return false;">Reset de Puertos</a>
+        </div>
+    </div>
+
+    <div class="dropdown" onclick="toggleDropdown(event)">
+        <button class="btn dark">⚙ Configuración</button>
+        <div class="dropdown-content">
+            <a href="#" onclick="alert('Ajustes Generales'); return false;">Ajustes Generales</a>
+            <a href="#" onclick="alert('Configurar Puertos'); return false;">Configurar Puertos</a>
+            <a href="#" onclick="alert('Gestionar Usuarios'); return false;">Gestionar Usuarios</a>
+            <a href="#" onclick="alert('Backup y Restore'); return false;">Backup y Restore</a>
+        </div>
+    </div>
+
+    <div class="dropdown" onclick="toggleDropdown(event)">
+        <button class="btn dark">Controles de Flujo ▼</button>
+        <div class="dropdown-content">
+            <a href="#" onclick="alert('Pausar Todos'); return false;">Pausar Todos</a>
+            <a href="#" onclick="alert('Reanudar Todos'); return false;">Reanudar Todos</a>
+            <a href="#" onclick="alert('Detener Todos'); return false;">Detener Todos</a>
+            <a href="#" onclick="alert('Control de Ancho de Banda'); return false;">Control de Ancho de Banda</a>
+        </div>
+    </div>
+</section>
+
+<section class="search-bar">
+    <input type="text" placeholder="Buscar stream, canal u operador...">
+    <select>
+        <option>Todos los protocolos</option>
+        <option>SRT</option>
+        <option>UDP</option>
+    </select>
+</section>
+
+<section class="table-container">
+<div class="table-responsive-wrapper">
+<table>
+    <thead>
+        <tr>
+            <th>CANAL</th>
+            <th>CLIENTE</th>
+            <th>ESTADO</th>
+            <th>PROTOCOLO</th>
+            <th>PUERTO</th>
+            <th>BITRATE</th>
+            <th>ACCIONES</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>TVAGRO HD</td>
+            <td>TVAGRO</td>
+            <td class="green font-semibold"><span class="animate-pulse mr-1">●</span> Activo</td>
+            <td>SRT (Caller)</td>
+            <td>7401</td>
+            <td>12.4 Mbps</td>
+            <td class="actions-cell">
+                <button class="icon">⚙</button>
+                <button class="icon play">▶</button>
+                <button class="icon stop">■</button>
+                <button class="icon">+</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>SANTA ELENA CABLETV</td>
+            <td>Santa Elena</td>
+            <td class="yellow font-semibold">● Inestable</td>
+            <td>UDP</td>
+            <td>2236</td>
+            <td>3.7 Mbps</td>
+            <td class="actions-cell">
+                <button class="icon">⚙</button>
+                <button class="icon play">▶</button>
+                <button class="icon stop">■</button>
+                <button class="icon">+</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>UNIVERSAL CABLE</td>
+            <td>Universal Cable</td>
+            <td class="red font-semibold">● Caído</td>
+            <td>SRT (Listener)</td>
+            <td>7405</td>
+            <td>0 Mbps</td>
+            <td class="actions-cell">
+                <button class="icon">⚙</button>
+                <button class="icon play disabled">▶</button>
+                <button class="icon stop">■</button>
+                <button class="icon">+</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>STREAMHD.NET</td>
+            <td>StreamHD</td>
+            <td class="green font-semibold"><span class="animate-pulse mr-1">●</span> Activo</td>
+            <td>UDP</td>
+            <td>2237</td>
+            <td>9.1 Mbps</td>
+            <td class="actions-cell">
+                <button class="icon">⚙</button>
+                <button class="icon play">▶</button>
+                <button class="icon stop">■</button>
+                <button class="icon">+</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+</div>
+</section>
+
+<section class="legend">
+    <p><span class="green">● Estado Verde:</span> Transmisión activa, estable.</p>
+    <p><span class="yellow">● Estado Amarillo:</span> Latencia elevada.</p>
+    <p><span class="red">● Estado Rojo:</span> Error o desconexión.</p>
+</section>
+</section>
+
+<script>
+    function toggleDropdown(event) {
+        const dropdown = event.currentTarget;
+        const isActive = dropdown.classList.contains('active');
+        
+        // Cerrar todos los dropdowns abiertos
+        document.querySelectorAll('.dropdown.active').forEach(d => {
+            d.classList.remove('active');
+        });
+        
+        // Si el dropdown clickeado no estaba activo, lo abrimos
+        if (!isActive) {
+            dropdown.classList.add('active');
+        }
+        
+        event.stopPropagation();
+    }
+    
+    // Cerrar dropdowns al hacer click fuera
+    document.addEventListener('click', function() {
+        document.querySelectorAll('.dropdown.active').forEach(d => {
+            d.classList.remove('active');
+        });
+    });
+</script>
+
+</body>
+</html>
